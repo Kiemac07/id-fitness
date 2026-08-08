@@ -182,3 +182,37 @@ function closeVideoLightbox(event) {
         lightbox.classList.remove("active");
     }
 }
+const isaacVideo = document.getElementById("isaacTrainingVideo");
+const videoPlayButton = document.getElementById("videoPlayButton");
+
+if (isaacVideo && videoPlayButton) {
+
+    videoPlayButton.addEventListener("click", function () {
+
+        if (isaacVideo.paused) {
+            isaacVideo.play();
+            videoPlayButton.textContent = "Ⅱ";
+            videoPlayButton.classList.add("is-playing");
+        } else {
+            isaacVideo.pause();
+            videoPlayButton.textContent = "▶";
+            videoPlayButton.classList.remove("is-playing");
+        }
+
+    });
+
+    isaacVideo.addEventListener("click", function () {
+
+        if (isaacVideo.paused) {
+            isaacVideo.play();
+            videoPlayButton.textContent = "Ⅱ";
+            videoPlayButton.classList.add("is-playing");
+        } else {
+            isaacVideo.pause();
+            videoPlayButton.textContent = "▶";
+            videoPlayButton.classList.remove("is-playing");
+        }
+
+    });
+
+}

@@ -1618,3 +1618,51 @@ button {
     font-size: 40px;
     cursor: pointer;
 }
+/* ISAAC TRAINING VIDEO */
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+}
+
+.video-wrapper video {
+    display: block;
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.video-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 80px;
+    height: 80px;
+
+    border: 2px solid rgba(255,255,255,0.8);
+    border-radius: 50%;
+
+    background: rgba(0,0,0,0.55);
+    color: #fff;
+
+    font-size: 28px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 10;
+}
+
+.video-play-button:hover {
+    background: rgba(220,0,0,0.8);
+}
+
+.video-play-button.is-playing {
+    font-size: 24px;
+}
