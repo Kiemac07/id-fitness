@@ -39,3 +39,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+document.querySelectorAll('.photo-lightbox').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const overlay = document.createElement('div');
+        overlay.className = 'photo-lightbox-overlay';
+
+        const image = document.createElement('img');
+        image.src = this.href;
+        image.alt = this.querySelector('img')?.alt || '';
+
+        overlay.appendChild(image);
+        document.body.appendChild(overlay);
+
+        overlay.addEventListener('click', function () {
+            overlay.remove();
+        });
+    });
+});
