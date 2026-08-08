@@ -1,18 +1,41 @@
-const menuButton = document.querySelector(".mobile-menu-button");
-const mobileNavigation = document.querySelector(".mobile-navigation");
+document.addEventListener("DOMContentLoaded", function () {
 
-if (menuButton && mobileNavigation) {
-    menuButton.addEventListener("click", () => {
-        mobileNavigation.classList.toggle("active");
-        menuButton.classList.toggle("active");
+    const menuButton = document.querySelector(".mobile-menu-button");
+    const mobileNavigation = document.querySelector(".mobile-navigation");
+
+    if (!menuButton || !mobileNavigation) {
+        return;
+    }
+
+    menuButton.addEventListener("click", function () {
+
+        const isOpen = mobileNavigation.classList.contains("active");
+
+        if (isOpen) {
+            mobileNavigation.classList.remove("active");
+            menuButton.classList.remove("active");
+            mobileNavigation.style.display = "none";
+        } else {
+            mobileNavigation.classList.add("active");
+            menuButton.classList.add("active");
+            mobileNavigation.style.display = "flex";
+        }
+
     });
+
 
     const mobileLinks = mobileNavigation.querySelectorAll("a");
 
-    mobileLinks.forEach(link => {
-        link.addEventListener("click", () => {
+    mobileLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
             mobileNavigation.classList.remove("active");
             menuButton.classList.remove("active");
+            mobileNavigation.style.display = "none";
+
         });
+
     });
-}
+
+});
