@@ -696,6 +696,12 @@ main {
             #0c0d0e
         );
 }
+.result-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 .video-placeholder video {
     width: 100%;
     height: 100%;
