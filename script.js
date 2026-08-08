@@ -1,60 +1,162 @@
-document.addEventListener("DOMContentLoaded", function () {
+/* =========================================
+   ID FITNESS — SCRIPT
+========================================= */
 
-    const menuButton = document.querySelector(".mobile-menu-button");
-    const mobileNavigation = document.querySelector(".mobile-navigation");
 
-    if (!menuButton || !mobileNavigation) {
-        return;
-    }
+/* =========================================
+   MOBILE MENU
+========================================= */
 
-    menuButton.addEventListener("click", function () {
+const mobileMenuButton = document.querySelector(".mobile-menu-button");
+const mobileNavigation = document.querySelector(".mobile-navigation");
 
-        const isOpen = mobileNavigation.classList.contains("active");
+if (mobileMenuButton && mobileNavigation) {
 
-        if (isOpen) {
-            mobileNavigation.classList.remove("active");
-            menuButton.classList.remove("active");
-            mobileNavigation.style.display = "none";
-        } else {
-            mobileNavigation.classList.add("active");
-            menuButton.classList.add("active");
-            mobileNavigation.style.display = "flex";
-        }
-
+    mobileMenuButton.addEventListener("click", () => {
+        mobileNavigation.classList.toggle("active");
     });
 
 
-    const mobileLinks = mobileNavigation.querySelectorAll("a");
+    mobileNavigation.querySelectorAll("a").forEach(link => {
 
-    mobileLinks.forEach(function (link) {
-
-        link.addEventListener("click", function () {
-
+        link.addEventListener("click", () => {
             mobileNavigation.classList.remove("active");
-            menuButton.classList.remove("active");
-            mobileNavigation.style.display = "none";
+        });
 
+    });
+
+}
+
+
+/* =========================================
+   PHOTO LIGHTBOX
+========================================= */
+
+document.querySelectorAll(".photo-lightbox").forEach(link => {
+
+    link.addEventListener("click", function (event) {
+
+        event.preventDefault();
+
+        const overlay = document.createElement("div");
+
+        overlay.className = "photo-lightbox-overlay";
+
+
+        const image = document.createElement("img");
+
+        image.src = this.href;
+
+        image.alt =
+            this.querySelector("img")?.alt ||
+            "ID Fitness image";
+
+
+        overlay.appendChild(image);
+
+        document.body.appendChild(overlay);
+
+
+        overlay.addEventListener("click", () => {
+            overlay.remove();
         });
 
     });
 
 });
-document.querySelectorAll('.photo-lightbox').forEach(link => {
-    link.addEventListener('click', function (e) {
-        e.preventDefault();
 
-        const overlay = document.createElement('div');
-        overlay.className = 'photo-lightbox-overlay';
 
-        const image = document.createElement('img');
-        image.src = this.href;
-        image.alt = this.querySelector('img')?.alt || '';
+/* =========================================
+   ESCAPE KEY — CLOSE LIGHTBOX / MENU
+========================================= */
 
-        overlay.appendChild(image);
-        document.body.appendChild(overlay);
+document.addEventListener("keydown", event => {
 
-        overlay.addEventListener('click', function () {
+    if (event.key === "Escape") {
+
+        const overlay =
+            document.querySelector(".photo-lightbox-overlay");
+
+        if (overlay) {
             overlay.remove();
+        }
+
+
+        if (mobileNavigation) {
+            mobileNavigation.classList.remove("active");
+        }
+
+    }
+
+});
+
+
+/* =========================================
+   SMOOTH NAVIGATION
+========================================= */
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+    link.addEventListener("click", function (event) {
+
+        const targetId = this.getAttribute("href");
+
+        if (
+            targetId === "#" ||
+            !targetId ||
+            targetId.length < 2
+        ) {
+            return;
+        }
+
+        const target =
+            document.querySelector(targetId);
+
+        if (!target) {
+            return;
+        }
+
+        event.preventDefault();
+
+        target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
         });
+
     });
+
+});
+
+
+/* =========================================
+   HEADER SCROLL EFFECT
+========================================= */
+
+const header = document.querySelector(".header");
+
+window.addEventListener("scroll", () => {
+
+    if (!header) {
+        return;
+    }
+
+    if (window.scrollY > 40) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
+
+});
+
+
+/* =========================================
+   IMAGE LOAD ANIMATION
+========================================= */
+
+document.querySelectorAll("img").forEach(image => {
+
+    image.addEventListener("load", () => {
+        image.classList.add("loaded");
+    });
+
 });
