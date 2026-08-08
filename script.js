@@ -160,3 +160,25 @@ document.querySelectorAll("img").forEach(image => {
     });
 
 });
+function openVideoLightbox() {
+    const lightbox = document.getElementById("videoLightbox");
+    const video = document.getElementById("isaacTrainingVideo");
+
+    lightbox.classList.add("active");
+    video.currentTime = 0;
+    video.pause();
+}
+
+function closeVideoLightbox(event) {
+    if (
+        event.target.id === "videoLightbox" ||
+        event.target.classList.contains("video-lightbox-close")
+    ) {
+        const lightbox = document.getElementById("videoLightbox");
+        const video = document.getElementById("isaacTrainingVideo");
+
+        video.pause();
+        video.currentTime = 0;
+        lightbox.classList.remove("active");
+    }
+}

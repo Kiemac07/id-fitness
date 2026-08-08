@@ -1575,3 +1575,46 @@ button {
     }
 
 }
+.video-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.video-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.video-lightbox-content {
+    position: relative;
+    width: min(1100px, 95vw);
+}
+
+.video-lightbox-content video {
+    width: 100%;
+    max-height: 85vh;
+    display: block;
+    background: #000;
+}
+
+.video-lightbox-close {
+    position: absolute;
+    top: -45px;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
