@@ -1716,3 +1716,17 @@ button {
             #111315 100%
         ) !important;
 }
+/* =========================================
+   TRAINING CARDS — ALL MATCH CARD 02
+   ========================================= */
+
+.training-grid .training-card {
+    background: linear-gradient(
+        135deg,
+        #2a0f12 0%,
+        #1b1113 50%,
+        #111315 100%
+    ) !important;
+
+    border: 1px solid rgba(220, 20, 30, 0.28) !important;
+}
