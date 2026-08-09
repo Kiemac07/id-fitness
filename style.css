@@ -1709,7 +1709,7 @@ button {
 .footer-brand {
     position: absolute;
     right: 5%;
-    top: 51%;
+    top: 50%;
     transform: translateY(-50%);
     width: 45%;
     display: flex;
