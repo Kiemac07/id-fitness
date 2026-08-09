@@ -1682,13 +1682,13 @@ button {
 
 @media (max-width: 600px) {
     .header {
-        height: 105px !important;
-        min-height: 105px !important;
+        height: 95px !important;
+        min-height: 95px !important;
         padding: 0 5% !important;
     }
 
     .header .logo,
     .header img {
-        max-height: 105px !important;
+        max-height: 95px !important;
     }
 }
