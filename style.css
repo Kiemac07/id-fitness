@@ -1722,6 +1722,7 @@ button {
 .footer-links {
     width: 45%;
     margin-left: 0;
+    margin-right: auto;
     margin-top: 0;
 }
 .video-lightbox {
