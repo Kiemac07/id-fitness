@@ -1509,7 +1509,10 @@ button {
         font-weight: 700;
         letter-spacing: 0.16em;
     }
-
+.pricing-card h3 {
+    white-space: nowrap;
+    text-align: center;
+}
 
     .section {
         padding: 85px 6%;
