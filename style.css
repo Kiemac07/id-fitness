@@ -1699,24 +1699,30 @@ button {
 }
 .footer {
     position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 .footer-brand {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    position: absolute;
+    right: 5%;
+    top: 0;
     width: 45%;
+    align-items: center;
 }
 
 .footer-brand img {
-    width: 180px;
-    margin-bottom: 20px;
+    width: 240px;
+    max-width: 100%;
+    margin: 0;
 }
 
 .footer-links {
     width: 45%;
-    margin-left: 50%;
-    margin-top: -180px;
+    margin-left: 0;
+    margin-top: 0;
 }
 .video-lightbox {
     position: fixed;
