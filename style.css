@@ -682,7 +682,104 @@ button {
     line-height: 0.95;
 }
 
+/* =========================
+   PRICING
+========================= */
 
+.pricing-section {
+    background: var(--black);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.pricing-card {
+    position: relative;
+    min-height: 360px;
+    padding: 35px 28px;
+    background: linear-gradient(
+        150deg,
+        rgba(215, 25, 32, 0.18),
+        var(--dark-2)
+    );
+    border: 1px solid var(--line);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(215, 25, 32, 0.5);
+}
+
+.pricing-number {
+    display: block;
+    color: var(--red);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    margin-bottom: 55px;
+}
+
+.pricing-card h3 {
+    margin-bottom: 15px;
+    font-family: var(--heading-font);
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.pricing-price {
+    font-family: var(--heading-font);
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.pricing-per {
+    display: block;
+    color: var(--red);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    margin-bottom: 25px;
+}
+
+.pricing-card p {
+    color: var(--muted);
+    font-size: 0.86rem;
+    line-height: 1.7;
+}
+
+.pricing-card strong {
+    display: block;
+    margin-top: 25px;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    color: #fff;
+}
+
+.pricing-bottom {
+    margin-top: 35px;
+    padding: 25px 30px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.pricing-bottom strong {
+    font-family: var(--heading-font);
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.pricing-bottom span {
+    color: var(--muted);
+    font-size: 0.85rem;
+}
 /* =========================================
    MEDIA
 ========================================= */
