@@ -1697,6 +1697,27 @@ button {
     }
 
 }
+.footer {
+    position: relative;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 45%;
+}
+
+.footer-brand img {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    width: 45%;
+    margin-left: 50%;
+    margin-top: -180px;
+}
 .video-lightbox {
     position: fixed;
     inset: 0;
