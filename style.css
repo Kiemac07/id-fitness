@@ -576,13 +576,19 @@ button {
     gap: 15px;
 }
 
-.training-card {
+.training-grid .training-card {
     position: relative;
 
     min-height: 370px;
     padding: 35px 28px;
 
-    background: var(--dark-2);
+    background:
+        linear-gradient(
+            150deg,
+            rgba(215,25,32,0.18),
+            var(--dark-2)
+        );
+
     border: 1px solid var(--line);
 
     transition:
