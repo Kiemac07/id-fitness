@@ -1677,3 +1677,30 @@ button {
     margin: 0;
     box-shadow: 9px 0 0 white;
 }
+/* MOBILE HEADER + RESULT CARD FIX */
+
+@media (max-width: 600px) {
+
+    /* Make the top header taller to match the logo */
+    .header {
+        height: 140px !important;
+        min-height: 140px !important;
+        padding: 0 5% !important;
+    }
+
+    /* Keep the page content below the taller fixed header */
+    main {
+        padding-top: 140px !important;
+    }
+
+    /* Give ALL result boxes the same grey/red gradient */
+    .result-placeholder {
+        background: linear-gradient(
+            135deg,
+            #202327 0%,
+            #2a0f12 50%,
+            #111315 100%
+        ) !important;
+    }
+
+}
