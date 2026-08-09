@@ -697,6 +697,8 @@ button {
 }
 
 .pricing-card {
+    width: 100%;
+    box-sizing: border-box;
     position: relative;
     min-height: 360px;
     padding: 35px 28px;
