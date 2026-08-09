@@ -1706,3 +1706,12 @@ button {
         max-height: 90px !important;
     }
 }
+/* MAKE ALL RESULT BOXES MATCH BOX 02 */
+.result-placeholder {
+    background: linear-gradient(
+        135deg,
+        #2a0f12 0%,
+        #1f1115 50%,
+        #111315 100%
+    ) !important;
+}
