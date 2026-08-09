@@ -190,7 +190,7 @@ button {
     left: 0;
 
     width: 100%;
-    height: 82px;
+    height: 95px;
 
     padding: 0 5%;
 
@@ -825,12 +825,12 @@ button {
     text-align: center;
 
     background:
-        linear-gradient(
-            135deg,
-            #202327,
-            #111315
-        );
-
+    linear-gradient(
+        135deg,
+        #202327 0%,
+        #2a0f12 50%,
+        #111315 100%
+    );
     border: 1px solid var(--line);
 
     overflow: hidden;
