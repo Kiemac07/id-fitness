@@ -1706,8 +1706,18 @@ button {
         max-height: 90px !important;
     }
 }
-/* MAKE ALL RESULT BOXES MATCH BOX 02 */
-.result-placeholder {
+/* FORCE ALL RESULT BOXES TO MATCH BOX 02 */
+
+.results-grid .result-card,
+.results-grid .result-placeholder,
+.results-grid .result-card:nth-child(1),
+.results-grid .result-card:nth-child(2),
+.results-grid .result-card:nth-child(3),
+.results-grid .result-card:nth-child(4),
+.results-grid .result-card:nth-child(1) .result-placeholder,
+.results-grid .result-card:nth-child(2) .result-placeholder,
+.results-grid .result-card:nth-child(3) .result-placeholder,
+.results-grid .result-card:nth-child(4) .result-placeholder {
     background: linear-gradient(
         135deg,
         #2a0f12 0%,
